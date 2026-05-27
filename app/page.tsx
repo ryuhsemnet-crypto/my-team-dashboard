@@ -1,4 +1,3 @@
-import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 
 export default function Page() {
@@ -10,10 +9,10 @@ export default function Page() {
         </p>
         <Link
           href="/login"
-          className="flex items-center justify-center gap-5 self-center rounded-lg bg-blue-500 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-400 w-full"
+          className="flex items-center justify-center rounded-lg bg-blue-500 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-400 w-full"
         >
+          {/* 화살표 아이콘 코드를 삭제하고 글자만 남겼습니다. */}
           <span>로그인하기</span>
-          <ArrowRightIcon className="w-5" />
         </Link>
       </div>
     </main>
