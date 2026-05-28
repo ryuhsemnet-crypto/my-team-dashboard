@@ -3,30 +3,35 @@ import { signOut } from '@/auth';
 
 export default function SideNav() {
   return (
-    <div className="flex h-full flex-col px-3 py-4 md:px-2 bg-gray-50 border-r">
-      {/* 로고 영역 */}
+    <div className="flex h-full flex-col px-3 py-4 bg-white border-r">
+      {/* 로고 박스 대신 단순 텍스트 링크로 변경 */}
       <Link
-        className="mb-2 flex h-20 items-end justify-start rounded-md bg-blue-600 p-4 md:h-40"
+        className="mb-8 flex flex-col justify-start px-2"
         href="/"
       >
-        <div className="w-32 text-white md:w-40 font-bold text-xl uppercase tracking-wider">
-          Emnet Dash
-        </div>
+        <span className="text-xl font-bold text-black tracking-tighter">
+          EMNET DASHBOARD
+        </span>
+        <span className="text-xs text-gray-500">Management System</span>
       </Link>
 
-      <div className="flex grow flex-row justify-between space-x-2 md:flex-col md:space-x-0 md:space-y-2">
-        {/* 메뉴 영역 (추후 여기에 링크들을 추가할 수 있습니다) */}
-        <div className="hidden h-auto w-full grow rounded-md bg-gray-50 md:block"></div>
+      <div className="flex grow flex-row justify-between space-x-2 md:flex-col md:space-x-0 md:space-y-4">
+        {/* 메뉴 영역 */}
+        <div className="flex flex-col gap-2">
+          {/* 나중에 메뉴가 필요하면 여기에 <Link>글자만</Link> 넣으면 됩니다 */}
+        </div>
         
-        {/* 로그아웃 버튼 (텍스트 중심) */}
+        <div className="hidden h-auto w-full grow md:block"></div>
+        
+        {/* 로그아웃 버튼 (아이콘 없이 검정 글자만) */}
         <form
           action={async () => {
             'use server';
             await signOut();
           }}
         >
-          <button className="flex h-[48px] w-full grow items-center justify-center rounded-md bg-white p-3 text-sm font-semibold text-red-600 hover:bg-red-50 md:flex-none md:justify-start md:p-2 md:px-3 border border-red-100 transition-colors">
-            <span>SIGN OUT</span>
+          <button className="flex w-full items-center justify-start py-2 px-2 text-sm font-medium text-gray-600 hover:text-red-600 hover:underline transition-all">
+            LOGOUT
           </button>
         </form>
       </div>
